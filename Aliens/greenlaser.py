@@ -9,6 +9,6 @@ class Green_Laser(pygame.sprite.Sprite):
         self.rect.centery=y
         green_laser_group.add(self)
     def update(self):
-        self.rect.y-=1
+        self.rect.y-=10
         if self.rect.y<0:
             self.kill()

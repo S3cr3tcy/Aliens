@@ -5,10 +5,11 @@ class Red_Laser(pygame.sprite.Sprite):
         super().__init__()
         self.image=pygame.image.load("pictures_nanocillium_game/red_laser.png")
         self.rect=self.image.get_rect()
-        self.rect.centerx=x+20
+        self.rect.centerx=x+5
         self.rect.centery=y
         red_laser_group.add(self)
     def update(self):
-        self.rect.y+=1
+        self.rect.y+=10
         if self.rect.y>600:
             self.kill()
+    

@@ -13,6 +13,8 @@ class Spaceship(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.centerx=WIDTH//2 + 25
         self.rect.bottom=HEIGHT
+        self.score=0
+        self.lives=5
     def move(self,event):
         if event.type == pygame.KEYDOWN:
             if event.key==pygame.K_RIGHT:
@@ -20,6 +22,7 @@ class Spaceship(pygame.sprite.Sprite):
             if event.key==pygame.K_LEFT:
                 self.rect.x-=50
     def shoot(self,green_laser_group):
-        Green_Laser(self.rect.x,self.rect.top,green_laser_group)
+        if len(green_laser_group)<3:
+            Green_Laser(self.rect.x,self.rect.top,green_laser_group)
         
 
